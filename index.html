@@ -326,6 +326,44 @@
 
     </div>
 
+    <!-- MODAL CEK & TAMPIL INVOICE CUSTOMER -->
+    <div id="invoice-modal" class="fixed inset-0 bg-black/60 z-50 hidden flex items-center justify-center p-4">
+        <div class="saweria-card bg-[#fff8e7] max-w-md w-full p-5 relative max-h-[88vh] flex flex-col">
+            <div class="flex justify-between items-start border-b-2 border-black pb-3 mb-3 shrink-0">
+                <div>
+                    <span class="text-[10px] font-bold bg-[#d8f3dc] border border-black px-1.5 py-0.5 rounded">PEMBAYARAN: QRIS ONLY</span>
+                    <h3 class="font-bold text-base mt-1">🧾 Cek Invoice — janlupngops.fun</h3>
+                </div>
+                <button onclick="closeInvoiceModal()" class="saweria-btn bg-red-400 w-8 h-8 flex items-center justify-center font-bold shrink-0">✕</button>
+            </div>
+            <div class="flex gap-2 mb-3 shrink-0">
+                <input type="text" id="inp-invoice-id" placeholder="Masukkan No. Invoice, cth: INV-20261105-AB12" class="saweria-input w-full p-2.5 text-xs font-bold uppercase" onkeydown="if(event.key==='Enter') checkInvoice()">
+                <button onclick="checkInvoice()" class="saweria-btn bg-[#faae2b] px-4 py-2 text-xs font-bold shrink-0">Cari</button>
+            </div>
+            <div id="invoice-result" class="overflow-y-auto pr-1 text-xs">
+                <p class="text-gray-600 text-[11px]">Nomor invoice kamu terima saat selesai checkout (tercantum juga di pesan WhatsApp ke admin). Invoice tersimpan di browser yang dipakai saat memesan, jadi cek dari perangkat & browser yang sama ya.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL RIWAYAT PEMESANAN CUSTOMER -->
+    <div id="history-modal" class="fixed inset-0 bg-black/60 z-50 hidden flex items-center justify-center p-4">
+        <div class="saweria-card bg-[#fff8e7] max-w-md w-full p-5 relative max-h-[88vh] flex flex-col">
+            <div class="flex justify-between items-start border-b-2 border-black pb-3 mb-3 shrink-0">
+                <div>
+                    <span class="text-[10px] font-bold bg-[#d8f3dc] border border-black px-1.5 py-0.5 rounded">PESANANMU DI PERANGKAT INI</span>
+                    <h3 class="font-bold text-base mt-1">📜 Riwayat Pemesanan</h3>
+                </div>
+                <button onclick="closeOrderHistory()" class="saweria-btn bg-red-400 w-8 h-8 flex items-center justify-center font-bold shrink-0">✕</button>
+            </div>
+            <div id="history-summary" class="shrink-0 mb-3"></div>
+            <div id="history-list" class="overflow-y-auto space-y-2 pr-1 text-xs">
+                <!-- Diisi otomatis oleh JS -->
+            </div>
+            <p class="text-[10px] text-gray-500 mt-3 shrink-0">Riwayat tersimpan di browser yang dipakai saat memesan, jadi buka dari perangkat & browser yang sama ya.</p>
+        </div>
+    </div>
+
     <!-- MODAL JADWAL PASSWORD WIFI 31 HARI -->
     <div id="wifi-modal" class="fixed inset-0 bg-black/60 z-50 hidden flex items-center justify-center p-4">
         <div class="saweria-card bg-[#fff8e7] max-w-md w-full p-5 relative max-h-[85vh] flex flex-col">
